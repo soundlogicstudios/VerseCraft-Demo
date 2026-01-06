@@ -194,4 +194,8 @@
 .debug-hitboxes #hbTosAccept {
   outline: 2px dashed rgba(0, 200, 200, 0.9);
   outline-offset: 2px;
+
+  /* TEMP DEBUG: show actual clickable area */
+  background: rgba(255, 0, 0, 0.22) !important;
+}
 }
