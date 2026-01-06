@@ -21,11 +21,12 @@
    ========================= */
 
 /* Tap To Start (trained location at the bottom plate) */
+/* Splash: Tap To Start (pill-accurate) */
 #hbSplashTap{
-  left: 8.5%;
-  top: 90.5%;
-  width: 84%;
-  height: 15%;
+  left: 21.5%;
+  top: 81.5%;
+  right: 21.5%;
+  bottom: 12.5%;
 }
 
 /* =========================
