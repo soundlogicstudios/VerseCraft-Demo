@@ -21,12 +21,12 @@
    ========================= */
 
 /* Tap To Start (trained location at the bottom plate) */
-/* Splash: Tap To Start (pill-accurate) */
-#hbSplashTap{
+/* Splash: Tap To Start (pill-accurate) */#hbSplashTap{
+  position: absolute; /* or fixed if your hitbox layer uses fixed */
   left: 21.5%;
-  top: 70.5%;
-  right: 21.5%;
-  bottom: 12.5%;
+  top: 81.5%;
+  width: 57%;
+  height: 6%;
 }
 
 /* =========================
