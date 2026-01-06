@@ -12,7 +12,7 @@ function setFooter() {
   if (!el) return;
 
   // Replace just the text portion at the start of the footer, keep the Debug button
-  // Footer structure in index.html: "VerseCraft v0.0.01 • [Debug]"
+  // Footer structure in index.html: "VerseCraft v0.0.02 • [Debug]"
   const btn = document.getElementById("btnDebug");
   el.textContent = `VerseCraft v${VERSION} • `;
   if (btn) el.appendChild(btn);
