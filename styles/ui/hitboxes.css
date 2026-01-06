@@ -22,11 +22,10 @@
 
 /* Tap To Start (trained location at the bottom plate) */
 #hbSplashTap{
-  left: 18%;
-  width: 64%;
-  height: 10%;
-  top: auto;
-  bottom: 12%;
+  left: 8.5%;
+  top: 76.5%;
+  width: 84%;
+  height: 15%;
 }
 
 /* =========================
