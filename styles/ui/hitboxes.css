@@ -43,11 +43,12 @@
    ========================================================================== */
 
 #screen-tos #hbTosAccept{
-  /* TODO: Replace with measured pill/button bounds */
-  left: 20%;
-  top: 82%;
-  width: 60%;
-  height: 8%;
+  /* Terms of Service — Accept/Continue (measured) */
+#screen-tos #hbTosAccept{
+  left: 16.5%;
+  top: 79.5%;
+  width: 65%;
+  height: 7%;
 }
 
 /* ============================================================================
