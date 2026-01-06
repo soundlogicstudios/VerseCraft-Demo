@@ -1,142 +1,147 @@
-/* VerseCraft Hitboxes v0.0.02
-   Invisible touch targets aligned to pre-rendered art.
-   Canonical authoring: left/top/width/height in % whenever possible.
-*/
+/* ============================================================================
+   VerseCraft — Hitboxes (Clean Canonical)
+   Authoring rule: percent-based left/top/width/height (NO right/bottom/transform)
+   Debug: outlines are handled by debug.css (body.debug .hitbox)
+   Optional fill: add class "debug-hitboxes" to <body> to tint hitboxes red.
+   ========================================================================== */
 
-/* Base hitbox */
+/* Base hitbox (all screens) */
 .hitbox{
   position: absolute;
+  z-index: 9999;
+  pointer-events: auto;
+
   background: transparent;
   border: 0;
   padding: 0;
   margin: 0;
 
-  pointer-events: auto;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  touch-action: manipulation;
 }
 
-/* =========================
-   SPLASH SCREEN HITBOXES
-   ========================= */
+/* Optional visual aid: add `.debug-hitboxes` to <body> */
+.debug-hitboxes .hitbox{
+  background: rgba(255, 0, 0, 0.22) !important;
+}
 
-/* Splash: Tap To Start (pill-accurate, canonical) */
-#hbSplashTap{
-  position: absolute;
+/* ============================================================================
+   SPLASH (data-screen="splash")
+   ========================================================================== */
+
+/* Splash — Tap To Start (PILL-ACCURATE, measured) */
+#screen-splash #hbSplashTap{
   left: 21.5%;
   top: 81.5%;
   width: 57%;
   height: 6%;
 }
 
-/* =========================
-   TERMS OF SERVICE HITBOXES
-   ========================= */
+/* ============================================================================
+   TERMS OF SERVICE (data-screen="tos")
+   NOTE: measure this next and replace these values.
+   ========================================================================== */
 
-/* Accept / Continue (trained location at the bottom) */
-#hbTosAccept{
+#screen-tos #hbTosAccept{
+  /* TODO: Replace with measured pill/button bounds */
   left: 20%;
+  top: 82%;
   width: 60%;
-  height: 9%;
-  top: auto;
-  bottom: 15%;
+  height: 8%;
 }
 
-/* =========================
-   MENU SCREEN HITBOXES
-   ========================= */
+/* ============================================================================
+   MENU (data-screen="menu")
+   NOTE: placeholders until measured.
+   ========================================================================== */
 
-/* Load New Story */
-#hbMenuLoad{
+#screen-menu #hbMenuLoad{
+  /* TODO: Measure "Load New Story" */
   left: 10%;
   top: 46%;
   width: 80%;
   height: 8%;
 }
 
-/* Settings */
-#hbMenuSettings{
+#screen-menu #hbMenuSettings{
+  /* TODO: Measure "Settings" */
   left: 10%;
   top: 60%;
   width: 80%;
   height: 8%;
 }
 
-/* =========================
-   SETTINGS SCREEN HITBOXES
-   ========================= */
+/* ============================================================================
+   SETTINGS (data-screen="settings")
+   NOTE: placeholders until measured.
+   ========================================================================== */
 
-/* Back / Menu */
-#hbSettingsBack{
+#screen-settings #hbSettingsBack{
+  /* TODO: Measure "Menu/Back" */
   left: 8%;
   top: 18%;
   width: 40%;
   height: 8%;
 }
 
-/* Clear Save */
-#hbSettingsClear{
+#screen-settings #hbSettingsClear{
+  /* TODO: Measure "Clear Save" */
   left: 8%;
   top: 30%;
   width: 84%;
   height: 8%;
 }
 
-/* Theme */
-#hbSettingsTheme{
+#screen-settings #hbSettingsTheme{
+  /* TODO: Measure "Theme" */
   left: 8%;
   top: 80%;
   width: 84%;
   height: 6%;
 }
 
-/* =========================
-   LIBRARY SCREEN HITBOXES
-   ========================= */
+/* ============================================================================
+   LIBRARY (data-screen="library")
+   NOTE: placeholders until measured.
+   ========================================================================== */
 
-/* Back to Menu */
-#hbLibraryMenu{
+#screen-library #hbLibraryMenu{
+  /* TODO: Measure top-left "Menu" */
   left: 2%;
   top: 5%;
   width: 34%;
   height: 8%;
 }
 
-/* Store (converted from right:2% + width:34% => left:64%) */
-#hbLibraryStore{
+#screen-library #hbLibraryStore{
+  /* TODO: Measure top-right "Store" */
   left: 64%;
   top: 5%;
   width: 34%;
   height: 8%;
 }
 
-/* Library Rows (3 visible rows by default) */
-#hbRow0{
+/* Library rows (3 visible rows by default) */
+#screen-library #hbRow0{
+  /* TODO: Measure row 1 */
   left: 7%;
   top: 24%;
   width: 86%;
   height: 18%;
 }
 
-#hbRow1{
+#screen-library #hbRow1{
+  /* TODO: Measure row 2 */
   left: 7%;
   top: 46%;
   width: 86%;
   height: 18%;
 }
 
-#hbRow2{
+#screen-library #hbRow2{
+  /* TODO: Measure row 3 */
   left: 7%;
   top: 68%;
   width: 86%;
   height: 18%;
-}
-
-/* Optional visual aid if you add `.debug-hitboxes` to <body> */
-.debug-hitboxes #hbSplashTap,
-.debug-hitboxes #hbTosAccept {
-  outline: 2px dashed rgba(0, 200, 200, 0.9);
-  outline-offset: 2px;
-
-  /* TEMP DEBUG: show actual clickable area */
-  background: rgba(255, 0, 0, 0.22) !important;
 }
