@@ -1,4 +1,16 @@
-/* Debug outlines toggled via body.debug */
+/* styles/ui/debug.css */
+/* Visible only when body.debug is present */
+
+:root{
+  --debugHudBg: rgba(0,0,0,.72);
+  --debugHudBorder: rgba(255,255,255,.18);
+  --debugHudText: rgba(255,255,255,.92);
+  --debugHudDim: rgba(255,255,255,.62);
+  --debugDot: rgba(0,255,180,.95);
+  --outline: rgba(0,255,180,.95);
+}
+
+/* Existing hitbox outlines toggled via body.debug */
 body.debug .hitbox{
   outline: 2px dashed var(--outline);
   outline-offset: -2px;
@@ -6,4 +18,60 @@ body.debug .hitbox{
 
 body.debug .footer{
   background: rgba(0,0,0,.55);
+}
+
+/* Debug HUD panel */
+body.debug #debugHud{
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2147483647;
+  background: var(--debugHudBg);
+  border: 1px solid var(--debugHudBorder);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  color: var(--debugHudText);
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+  pointer-events: none; /* never blocks taps */
+  user-select: none;
+  max-width: min(360px, calc(100vw - 16px));
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+
+body.debug #debugHud .row{
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+body.debug #debugHud .label{
+  color: var(--debugHudDim);
+  margin-right: 10px;
+}
+
+body.debug #debugHud .value{
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Touch / pointer dot */
+body.debug #debugTouchDot{
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--debugDot);
+  box-shadow: 0 0 0 2px rgba(0,0,0,.35), 0 0 20px rgba(0,255,180,.35);
+  z-index: 2147483647;
+  pointer-events: none; /* never blocks taps */
+  transform: translate3d(0,0,0);
+  opacity: 0; /* becomes visible when we have coordinates */
 }
