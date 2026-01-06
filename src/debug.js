@@ -120,6 +120,7 @@ export function initDebug() {
   if (btn) {
     btn.addEventListener("click", () => {
       body.classList.toggle("debug");
+      body.classList.toggle("debug-hitboxes"); 
       updateHud();
     });
   }
