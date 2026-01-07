@@ -54,10 +54,15 @@ html, body{
 .screen.active{ display: block; }
 
 .screen-bg{
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit: contain;      /* DO NOT use cover for framed art */
+  object-position:center;
+  background:#000;          /* letterbox fill */
+  pointer-events:none;
+}
 
   /* Pre-rendered art should fill the panel */
   object-fit: cover;
