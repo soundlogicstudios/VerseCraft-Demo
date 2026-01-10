@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <title>VerseCraft</title>
+
+  <!-- NOTE: No <base> tag. All paths are relative for GitHub Pages safety. -->
+  <link rel="stylesheet" href="./styles/base.css?v=0.0.04" />
+  <link rel="stylesheet" href="./styles/ui/hitboxes.css?v=0.0.04" />
+  <link rel="stylesheet" href="./styles/ui/debug.css?v=0.0.04" />
+
+  <!-- Screen-specific (mostly stubs today, but keeps the contract) -->
+  <link rel="stylesheet" href="./styles/screens/menu.css?v=0.0.04" />
+  <link rel="stylesheet" href="./styles/screens/settings.css?v=0.0.04" />
+  <link rel="stylesheet" href="./styles/screens/library.css?v=0.0.04" />
+  <link rel="stylesheet" href="./styles/screens/story.css?v=0.0.04" />
+  <link rel="stylesheet" href="./styles/screens/tos.css?v=0.0.04" />
+</head>
+<body>
+  <div id="app">
+    <div class="screens">
+      <!-- SPLASH -->
+      <section id="screen-splash" class="screen active" data-screen="splash" aria-label="Splash">
+        <img class="screen-bg" alt="Splash" src="./src/global/versecraft-ui/global-backgrounds/1st-screen-tap-to-start.PNG" />
+        <button id="hbSplashTap" class="hitbox" aria-label="Tap to Start"></button>
+      </section>
+
+      <!-- TERMS OF SERVICE -->
+      <section id="screen-tos" class="screen" data-screen="tos" aria-label="Terms of Service">
+        <img class="screen-bg" alt="Terms of Service" src="./src/global/versecraft-ui/global-backgrounds/tos-screen.png" />
+
+        <!--
+          Canonical VerseCraft scroll panel:
+          - Only .tos-scroll is scrollable
+          - Everything else stays fixed (iOS Safari safe)
+        -->
+        <div class="tos-panel" aria-hidden="false">
+          <div class="tos-scroll" id="tosScroll" role="region" aria-label="Terms text">
+            <div class="tos-content" id="tosContent">
+              <!-- Replace this placeholder with your real Terms copy -->
+              <h2>Terms of Service</h2>
+              <p>
+                This is placeholder Terms of Service text. Paste your full Terms here.
+                The container is intentionally scrollable to match the story-panel scroll behavior.
+              </p>
+              <p>
+                Important: On iOS Safari, the scroll container must have a constrained height and
+                its flex parents must allow shrinking (min-height: 0). This layout is built for that.
+              </p>
+              <p>
+                By tapping Accept, you agree to these terms.
+              </p>
+              <p style="opacity:.7">
+                (Add as much text as you need — this panel will scroll.)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button id="hbTosAccept" class="hitbox" aria-label="Accept Terms"></button>
+      </section>
+
+      <!-- MENU -->
+      <section id="screen-menu" class="screen" data-screen="menu" aria-label="Main Menu">
+        <img class="screen-bg" alt="Menu" src="./src/global/versecraft-ui/global-backgrounds/main-menu-no-save.webp" />
+        <button id="hbMenuLoad" class="hitbox" aria-label="Load / New Story"></button>
+        <button id="hbMenuSettings" class="hitbox" aria-label="Settings"></button>
+      </section>
+
+      <!-- SETTINGS -->
+      <section id="screen-settings" class="screen" data-screen="settings" aria-label="Settings">
+        <img class="screen-bg" alt="Settings" src="./src/global/versecraft-ui/global-backgrounds/settings.webp" />
+        <button id="hbSettingsBack" class="hitbox" aria-label="Back"></button>
+        <button id="hbSettingsClear" class="hitbox" aria-label="Clear Save"></button>
+        <button id="hbSettingsTheme" class="hitbox" aria-label="Theme"></button>
+      </section>
+
+      <!-- LIBRARY -->
+      <section id="screen-library" class="screen" data-screen="library" aria-label="Library">
+        <img class="screen-bg" alt="Library" src="./src/global/versecraft-ui/global-backgrounds/library.webp" />
+        <button id="hbLibraryMenu" class="hitbox" aria-label="Menu"></button>
+        <button id="hbLibraryStore" class="hitbox" aria-label="Store"></button>
+        <button id="hbRow0" class="hitbox" aria-label="Story Row 1"></button>
+        <button id="hbRow1" class="hitbox" aria-label="Story Row 2"></button>
+        <button id="hbRow2" class="hitbox" aria-label="Story Row 3"></button>
+      </section>
+
+      <!-- STORY (placeholder shell) -->
+      <section id="screen-story" class="screen" data-screen="story" aria-label="Story">
+        <div class="story-shell">
+          <div class="story-top">
+            <button class="story-back" id="hbStoryBack" aria-label="Back to Library">Back</button>
+            <div class="story-title">Story Placeholder</div>
+          </div>
+          <div class="story-text">
+            This is the story panel shell. It already uses a scrollable interior region.
+            Once Terms scrolling is perfect, we reuse the same pattern here.
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer + Debug toggle (Debug HUD is injected by src/debug.js) -->
+  <div id="footer" class="footer">
+    VerseCraft v0.0.04 <span class="footer-spacer">•</span>
+    <button id="btnDebug" class="footer-btn" type="button">Debug</button>
+  </div>
+
+  <script type="module" src="./src/app.js?v=0.0.04"></script>
+</body>
+</html>
