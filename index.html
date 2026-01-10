@@ -14,10 +14,13 @@
   <link rel="stylesheet" href="./src/core/core.css?v=0.0.02" />
 </head>
 <body>
-  <div id="app" class="app-root"></div>
+  <!-- ENGINE MOUNT (MUST MATCH ScreenManager EXPECTATION) -->
+  <div id="screens" class="app-root"></div>
+
+  <!-- Debug overlay is separate and correct -->
   <div id="debug-overlay-root" aria-hidden="true"></div>
 
-  <!-- IMPORTANT: cache-bust modules on iOS Safari by bumping v -->
+  <!-- Bootstrap (must run AFTER DOM exists) -->
   <script type="module" src="./src/core/bootstrap.js?v=0.0.02"></script>
 </body>
 </html>
