@@ -1,142 +1,64 @@
 /* =========================================================
-   VerseCraft — hitboxes.css (RESTORED / CANONICAL)
-   ---------------------------------------------------------
-   IMPORTANT:
-   - Do NOT scope hitboxes to .screen or #screen-* selectors.
-     This project binds hitboxes by ID (InputJS) and RouterJS
-     only toggles screen visibility. If you scope by screen,
-     you can accidentally make hitboxes 0x0 if DOM nesting differs.
-   - Author hitboxes in % with left/top/width/height.
-   - Splash hitbox is LOCKED from measured diagnostics.
+   VerseCraft — Hitboxes
+   Canonical interactive zones (Debug-safe)
    ========================================================= */
 
-/* Base hitbox reset */
+/* ---------------------------------------------------------
+   Global hitbox defaults
+   --------------------------------------------------------- */
 .hitbox{
   position: absolute;
-  pointer-events: auto;
   background: transparent;
-  border: 0;
+  border: none;
   padding: 0;
   margin: 0;
-  z-index: 9999;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  touch-action: manipulation;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 20;
 }
 
-/* Debug visualization (only when body.debug is present) */
+/* Debug overlay (cyan boxes) */
 body.debug .hitbox{
-  outline: 2px dashed rgba(0, 200, 200, 0.9);
-  outline-offset: -2px;
-  background: rgba(255, 0, 0, 0.15);
+  outline: 2px dashed cyan;
+  background: rgba(0, 255, 255, 0.15);
 }
 
-/* =========================================================
-   SPLASH — Tap To Start (LOCKED)
-   Measured @ 375×644 DPR2 from your diagnostics:
-   TL 86,530  TR 302,527  BL 80,565  BR 295,560  C 187,545
-   ========================================================= */
-#hbSplashTap{
-  left: 21.33%;
-  top: 81.83%;
-  width: 59.20%;
-  height: 5.90%;
+/* ---------------------------------------------------------
+   SPLASH SCREEN
+   --------------------------------------------------------- */
+/*
+  Target from calibration tool:
+  Center: x=179 y=636
+  Percent: 48% / 83%
+  Viewport: 375x768
+*/
+#screen-splash #hbSplashTap{
+  left: 48%;
+  top: 83%;
+  transform: translate(-50%, -50%);
+
+  /* Covers TAP TO START pill cleanly */
+  width: 70%;
+  height: 10%;
 }
 
-/* =========================================================
-   TERMS OF SERVICE — Continue/Accept
-   NOTE: placeholder until you measure it (same TL/TR/BL/BR/C method)
-   ========================================================= */
-#hbTosAccept{
-  left: 16.5%;
-  top: 79.5%;
-  width: 65%;
-  height: 7%;
-}
+/* ---------------------------------------------------------
+   PLACEHOLDERS (intentionally empty for now)
+   These keep the contract stable while we align later
+   --------------------------------------------------------- */
 
-/* =========================================================
-   MENU — placeholders until measured
-   ========================================================= */
-#hbMenuLoad{
-  left: 10%;
-  top: 46%;
-  width: 80%;
-  height: 8%;
-}
+/* MENU */
+#screen-menu #hbMenuLoad{}
+#screen-menu #hbMenuSettings{}
 
-#hbMenuSettings{
-  left: 10%;
-  top: 60%;
-  width: 80%;
-  height: 8%;
-}
+/* SETTINGS */
+#screen-settings #hbSettingsBack{}
+#screen-settings #hbSettingsClear{}
+#screen-settings #hbSettingsTheme{}
 
-/* =========================================================
-   SETTINGS — placeholders until measured
-   ========================================================= */
-#hbSettingsBack{
-  left: 8%;
-  top: 18%;
-  width: 40%;
-  height: 8%;
-}
-
-#hbSettingsClear{
-  left: 8%;
-  top: 30%;
-  width: 84%;
-  height: 8%;
-}
-
-#hbSettingsTheme{
-  left: 8%;
-  top: 80%;
-  width: 84%;
-  height: 6%;
-}
-
-/* =========================================================
-   LIBRARY — placeholders until measured
-   ========================================================= */
-#hbLibraryMenu{
-  left: 2%;
-  top: 5%;
-  width: 34%;
-  height: 8%;
-}
-
-#hbLibraryStore{
-  left: 64%;
-  top: 5%;
-  width: 34%;
-  height: 8%;
-}
-
-/* Library rows (3 visible rows by default) */
-#hbRow0{
-  left: 7%;
-  top: 24%;
-  width: 86%;
-  height: 18%;
-}
-#hbRow1{
-  left: 7%;
-  top: 46%;
-  width: 86%;
-  height: 18%;
-}
-#hbRow2{
-  left: 7%;
-  top: 68%;
-  width: 86%;
-  height: 18%;
-}
-
-/* =========================================================
-   STORY — placeholder until measured
-   ========================================================= */
-#hbStoryBack{
-  left: 2%;
-  top: 5%;
-  width: 34%;
-  height: 8%;
-}
+/* LIBRARY */
+#screen-library #hbLibraryMenu{}
+#screen-library #hbLibraryStore{}
+#screen-library #hbRow0{}
+#screen-library #hbRow1{}
+#screen-library #hbRow2{}
