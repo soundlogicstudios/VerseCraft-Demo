@@ -56,24 +56,24 @@ body.debug .hitbox{
 }
 
 /* =========================================================
-   MENU — placeholder until measured
+   MENU — placeholders until measured
    ========================================================= */
 #hbMenuLoad{
-  left: 10%;
-  top: 62%;
+  left: 9%;
+  top: 41%;
   width: 80%;
-  height: 12%;
+  height: 8%;
 }
 
 #hbMenuSettings{
   left: 10%;
-  top: 76%;
+  top: 60%;
   width: 80%;
-  height: 12%;
+  height: 8%;
 }
 
 /* =========================================================
-   SETTINGS — placeholder until measured
+   SETTINGS — placeholders until measured
    ========================================================= */
 #hbSettingsBack{
   left: 6%;
@@ -97,7 +97,7 @@ body.debug .hitbox{
 }
 
 /* =========================================================
-   LIBRARY — placeholder until measured
+   LIBRARY — placeholders until measured
    ========================================================= */
 #hbLibraryMenu{
   left: 2%;
