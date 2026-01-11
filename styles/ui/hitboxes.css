@@ -1,6 +1,8 @@
 /* =========================================================
-   VerseCraft — Hitboxes
-   Canonical interactive zones (Debug-safe)
+   VerseCraft — Hitboxes (RESTORE + CALIBRATE)
+   - Restores all hitboxes so you don’t get stuck
+   - Splash calibrated to your marker: 48% / 83%
+   - Others are SAFE DEFAULTS (we’ll refine next)
    ========================================================= */
 
 /* ---------------------------------------------------------
@@ -12,53 +14,121 @@
   border: none;
   padding: 0;
   margin: 0;
-  cursor: pointer;
   pointer-events: auto;
   z-index: 20;
 }
 
-/* Debug overlay (cyan boxes) */
+/* Cyan debug overlay */
 body.debug .hitbox{
   outline: 2px dashed cyan;
   background: rgba(0, 255, 255, 0.15);
 }
 
-/* ---------------------------------------------------------
-   SPLASH SCREEN
-   --------------------------------------------------------- */
-/*
-  Target from calibration tool:
-  Center: x=179 y=636
-  Percent: 48% / 83%
-  Viewport: 375x768
-*/
+/* =========================================================
+   SPLASH
+   ========================================================= */
+/* Center: x=179 y=636 => 48% / 83% (viewport 375x768) */
 #screen-splash #hbSplashTap{
   left: 48%;
   top: 83%;
   transform: translate(-50%, -50%);
-
-  /* Covers TAP TO START pill cleanly */
   width: 70%;
   height: 10%;
 }
 
-/* ---------------------------------------------------------
-   PLACEHOLDERS (intentionally empty for now)
-   These keep the contract stable while we align later
-   --------------------------------------------------------- */
+/* =========================================================
+   TERMS OF SERVICE
+   ========================================================= */
+/* BIG, SAFE accept zone near bottom so you never get stuck */
+#screen-tos #hbTosAccept{
+  left: 12%;
+  top: 86%;
+  width: 76%;
+  height: 10%;
+  /* no transform: we’re using box coords */
+}
 
-/* MENU */
-#screen-menu #hbMenuLoad{}
-#screen-menu #hbMenuSettings{}
+/* =========================================================
+   MENU
+   ========================================================= */
+/* Two large zones approximating the two main pills */
+#screen-menu #hbMenuLoad{
+  left: 10%;
+  top: 62%;
+  width: 80%;
+  height: 12%;
+}
 
-/* SETTINGS */
-#screen-settings #hbSettingsBack{}
-#screen-settings #hbSettingsClear{}
-#screen-settings #hbSettingsTheme{}
+#screen-menu #hbMenuSettings{
+  left: 10%;
+  top: 76%;
+  width: 80%;
+  height: 12%;
+}
 
-/* LIBRARY */
-#screen-library #hbLibraryMenu{}
-#screen-library #hbLibraryStore{}
-#screen-library #hbRow0{}
-#screen-library #hbRow1{}
-#screen-library #hbRow2{}
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+/* Back button zone (typically top-left) */
+#screen-settings #hbSettingsBack{
+  left: 6%;
+  top: 6%;
+  width: 22%;
+  height: 10%;
+}
+
+/* Clear Save (mid-lower) */
+#screen-settings #hbSettingsClear{
+  left: 10%;
+  top: 62%;
+  width: 80%;
+  height: 12%;
+}
+
+/* Theme (lower) */
+#screen-settings #hbSettingsTheme{
+  left: 10%;
+  top: 76%;
+  width: 80%;
+  height: 12%;
+}
+
+/* =========================================================
+   LIBRARY
+   ========================================================= */
+/* Menu (top-left) + Store (top-right) */
+#screen-library #hbLibraryMenu{
+  left: 6%;
+  top: 6%;
+  width: 22%;
+  height: 10%;
+}
+
+#screen-library #hbLibraryStore{
+  left: 72%;
+  top: 6%;
+  width: 22%;
+  height: 10%;
+}
+
+/* Three row hitboxes (big defaults) */
+#screen-library #hbRow0{
+  left: 8%;
+  top: 32%;
+  width: 84%;
+  height: 14%;
+}
+
+#screen-library #hbRow1{
+  left: 8%;
+  top: 48%;
+  width: 84%;
+  height: 14%;
+}
+
+#screen-library #hbRow2{
+  left: 8%;
+  top: 64%;
+  width: 84%;
+  height: 14%;
+}
