@@ -76,11 +76,10 @@ body.debug .hitbox{
    SETTINGS — placeholders until measured
    ========================================================= */
 #hbSettingsBack{
-  left: 3
-  10%;
-  top: 43%;
-  width: 80%;
-  height: 8%;
+  left: 20.40%;
+  top: 44.05%;
+  width: 59.20%;
+  height: 5.90%;
 }
 
 #hbSettingsClear{
