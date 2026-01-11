@@ -76,7 +76,8 @@ body.debug .hitbox{
    SETTINGS — placeholders until measured
    ========================================================= */
 #hbSettingsBack{
-  left: 39%;
+  left: 3
+  10%;
   top: 43%;
   width: 80%;
   height: 8%;
