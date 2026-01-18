@@ -1,0 +1,14 @@
+{
+  "pack_id": "starter",
+  "title": "Starter Pack",
+  "description": "A set of stories for new players to learn VerseCraft’s rules.",
+  "stories": [
+    {
+      "id": "world_of_lorecraft",
+      "title": "World of Lorecraft",
+      "path": "./content/packs/starter/stories/world_of_lorecraft.json",
+      "blurb": "A first run into a ruin that watches you back. Learn VerseCraft’s rules through choices, consequences, and loot—survive long enough to discover what the world remembers.",
+      "cover": "./content/packs/starter/covers/world-of-lorecraft.png"
+    }
+  ]
+}
